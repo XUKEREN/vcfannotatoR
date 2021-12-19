@@ -20,8 +20,8 @@
 #   5. Percentage of reads supporting the alternative allele versus those supporting the reference allele.
 #   6. Allele frequency of variant (1000 genomes project) from Ensembl Variant Effect Predictor (VEP) REST API (API documentation is available here: http://grch37.rest.ensembl.org/documentation/info/vep_hgvs_post).
 #   7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, sift_prediction
-#   Command line use example: Rscript vcfannotatoR.R --input_dir . -I Challenge_data.vcf
-#   Command line use example that returns all the output files: Rscript vcfannotatoR.R --input_dir . -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE
+#   Command line use example: Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf
+#   Command line use example that returns all the output files: Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE
 #   
 ################################################################################
 

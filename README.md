@@ -5,6 +5,7 @@ A variant annotation tool parses vcf files and fetches variant information from 
   - [Introduction](#introduction)
   - [Installation](#installation)
     - [Dependencies](#dependencies)
+- [check dependencies and install packages if they are not already installed](#check-dependencies-and-install-packages-if-they-are-not-already-installed)
     - [Install vcfannotatoR from source](#install-vcfannotator-from-source)
   - [How to use vcfannotatoR](#how-to-use-vcfannotator)
     - [Arguments](#arguments)
@@ -46,7 +47,7 @@ check_package <- function(package) {
   }
 }
 
-# check dependencies and install packages if they are not already installed <!-- omit in toc -->
+# check dependencies and install packages if they are not already installed  
 packages <- c("optparse", "data.table", "tidyverse", "httr", "jsonlite", "xml2", "foreach", "doParallel")
 load_packages <- lapply(packages, check_package)
 ````
@@ -55,7 +56,7 @@ load_packages <- lapply(packages, check_package)
 ### Install vcfannotatoR from source
 
 You can clone the GitHub repository:  
-````
+```bash
 git clone https://github.com/XUKEREN/vcfannotatoR.git
 ````
 **vcfannotatoR.R** is ready for use in your command line.   
@@ -64,7 +65,7 @@ To run vcfannotatoR execute the vcfannotatoR.R script. This script catches the a
 ### Arguments  
 
 You can type the following in the command line to check options:  
-````
+```bash
 Rscript vcfannotatoR.R -h  
 ````  
 
@@ -77,13 +78,13 @@ Argument | Description | Required
 -M, --getformat | TRUE or FALSE, indicates whether to generate format fields tsv | No (default = FALSE)
 ### Examples   
 You can type the following in the command line, which will return a tsv file `Challenge_data.annotated.tsv` in the input directory:  
-````
+```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf
 ````
 An example output can be found here: [Challenge_data.annotated.tsv]()   
 
 You can type the following in the command line, which will return a complete set of output files in the input directory:     
-````
+```bash
 vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
 ````
 Example outputs: 
