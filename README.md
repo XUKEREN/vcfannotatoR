@@ -1,4 +1,4 @@
-# vcfannotatoR :dna: <!-- omit in toc -->
+# :dna: vcfannotatoR :dna: <!-- omit in toc -->
 A variant annotation tool that parses vcf files and fetches variant information from the Ensembl Variant Effect Predictor (VEP) REST API.  
 
 - [Introduction](#introduction)
