@@ -25,7 +25,7 @@ vcfannotatoR parses vcf files and annotate each variant in the vcf with the foll
 ### Dependencies  
 
 vcfannotatoR needs the following:
-- **R** (tested on R version 4.1.1 (2021-08-10))
+- **R** (tested on R version 4.1.1)
 - **An internet connection**
 - **The following R libraries:** (The number is the version tested during development)
 ```` 
@@ -37,7 +37,7 @@ vcfannotatoR needs the following:
 vcfannotatoR will check if the required R libraries are installed and automatically installs those not found. You can also use the following command in R to download the libraries before running vcfannotatoR:  
 
 
-````
+```r
 # create a function to check dependencies and install packages if they are not already installed <!-- omit in toc -->
 check_package <- function(package) {
   if (!require(package, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)) {
@@ -60,7 +60,7 @@ git clone https://github.com/XUKEREN/vcfannotatoR.git
 ````
 **vcfannotatoR.R** is ready for use in your command line.   
 ## How to use vcfannotatoR     
-To run vcfannotatoR execute the vcfannotatoR.R script. This script catches the arguments from the command line and produces a tsv with variant annotation.   
+To run vcfannotatoR execute the vcfannotatoR.R script. This script catches the arguments from the command line and produces a tsv with variant annotations.   
 ### Arguments  
 
 You can type the following in the command line to check options:  
@@ -75,9 +75,6 @@ Argument | Description | Required
 -M, --getmeta | TRUE or FALSE, indicates whether to generate meta data tsv | No (default = FALSE)
 -F, --getinfo | TRUE or FALSE, indicates whether to generate info fields tsv | No (default = FALSE)
 -M, --getformat | TRUE or FALSE, indicates whether to generate format fields tsv | No (default = FALSE)
-
-<br />
-
 ### Examples   
 You can type the following in the command line, which will return a tsv file `Challenge_data.annotated.tsv` in the input directory:  
 ````
