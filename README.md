@@ -29,7 +29,7 @@ vcfannotatoR needs the following:
 - **R** (tested on R version 4.1.1)
 - **An internet connection**
 - **The following R libraries:** (The number is the version tested during development)
-```` 
+```r 
     data.table (1.14.2)     tidyverse (1.3.1)       optparse (1.7.1)         
     foreach (1.5.1)         doParallel (1.0.16)     jsonlite (1.7.2)
     httr (1.4.2)            xml2 (1.3.3)            
@@ -42,7 +42,7 @@ vcfannotatoR will check if the required R libraries are installed and automatica
 # create a function to check dependencies and install packages if they are not already installed <!-- omit in toc -->
 check_package <- function(package) {
   if (!require(package, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)) {
-    install.packages(package, dependencies = TRUE)
+    install.packages(package, dependencies = TRUE, repos='http://cran.us.r-project.org')
     library(package, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
   }
 }
@@ -85,11 +85,11 @@ An example output can be found here: [Challenge_data.annotated.tsv]()
 
 You can type the following in the command line, which will return a complete set of output files in the input directory:     
 ```bash
-vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
+Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
 ````
 Example outputs: 
-- [Challenge_data.annotated.tsv]()   
-- [Challenge_data.info_meta.tsv]()
-- [Challenge_data.format_meta.tsv]()
-- [Challenge_data.info.tsv]()
-- [Challenge_data.format.tsv]()
+- [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv) has annotations for each variant 
+- [Challenge_data.info_meta.tsv](/data/Challenge_data.info_meta.tsv) has meta data for the info fields  
+- [Challenge_data.format_meta.tsv](/data/Challenge_data.format_meta.tsv) has meta data for the format fields  
+- [Challenge_data.info.tsv](/data/Challenge_data.info.tsv) has all the info fields  
+- [Challenge_data.format.tsv](/data/Challenge_data.format.tsv) has all the format fields   

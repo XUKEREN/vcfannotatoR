@@ -35,7 +35,7 @@ rm(list = ls())
 # create a function to check dependencies and install packages if they are not already installed
 check_package <- function(package) {
   if (!require(package, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)) {
-    install.packages(package, dependencies = TRUE)
+    install.packages(package, dependencies = TRUE, repos = 'http://cran.us.r-project.org')
     library(package, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
   }
 }
