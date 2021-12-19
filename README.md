@@ -18,7 +18,7 @@ vcfannotatoR parses vcf files and annotate each variant in the vcf with the foll
 4. Number of reads supporting the alternative allele.
 5. Percentage of reads supporting the alternative allele versus those supporting the reference allele.
 6. Allele frequency of variant (1000 genomes project) from Ensembl Variant Effect Predictor (VEP) REST API (API documentation is available here: http://grch37.rest.ensembl.org/documentation/info/vep_hgvs_post).
-7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar_significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, and sift_prediction
+7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar_significance, pubmed, transcript_id, gene_id, impact (a subjective classification of the severity of the variant consequence, based on agreement with SNPEff), gene_symbol (for each transcript), biotype, polyphen_prediction, and sift_prediction  
 
 ## Installation
 
@@ -63,7 +63,7 @@ git clone https://github.com/XUKEREN/vcfannotatoR.git
 To run vcfannotatoR execute the vcfannotatoR.R script. This script catches the arguments from the command line and produces a tsv with variant annotations.   
 ### Arguments  
 
-You can type the following in the command line to check options:  
+You can type the following in the command line to check available options:  
 ```bash
 Rscript vcfannotatoR.R -h  
 ````  
@@ -94,6 +94,14 @@ Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE -
         1	935222	C	A	1134	snp	480	652	1.35833333333333	missense_variant	0.4938	rs2298214	0.4938	A	NA	32203549	ENST00000428771	ENSG00000188290	MODERATE	HES4	protein_coding	benign	tolerated_low_confidence
         1	1277533	T	C	786	snp	0	786	Inf	synonymous_variant	0.998	rs307362	0.002	T	NA	NA	ENST00000378888,ENST00000378891	ENSG00000107404,ENSG00000107404	LOW,LOW	DVL1,DVL1	protein_coding,protein_coding	NA,NA	NA,NA
 
+1. Type of variation (substitution, insertion, CNV, etc.).
+2. Functional consequence (missense, silent, intergenic, etc.). If there are multiple effects, the variant will be annotated with the most deleterious consequence.
+3. Sequence reading depth at each variant site.
+4. Number of reads supporting the alternative allele.
+5. Percentage of reads supporting the alternative allele versus those supporting the reference allele.
+6. Allele frequency of variant (1000 genomes project) from Ensembl Variant Effect Predictor (VEP) REST API (API documentation is available here: http://grch37.rest.ensembl.org/documentation/info/vep_hgvs_post).
+7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar_significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, and sift_prediction
+
 - [Challenge_data.info_meta.tsv](/data/Challenge_data.info_meta.tsv) has meta data for the info fields  
 
         INFO	description
@@ -115,7 +123,7 @@ Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE -
         1	935222	.	C	A	16866.7	.	0.574956	58.3503	4	0.666667	6	652	1X	1134	1134	0	44.7878	169.779	0	1	2	70	70	2	1	53.367	0.990798	0.975	0	0	0	0	24492	19222	480	398	72.0711	214.077	254	1	28	1186.05	624	16	910.975	464	snp
         1	1277533	.	T	C	28168.6	.	0	0	6	1	6	786	1X	786	786	0	94.5216	0	0	1	1	70	0	2	1	307.075	0.977099	0	0	0	0	0	31532	0	0	474	75.5143	0	312	1	376	6.20397	410	0	0	0	snp
 
-- [Challenge_data.format.tsv](/data/Challenge_data.format.tsv) has all the format fields   
+- [Challenge_data.format.tsv](/data/Challenge_data.format.tsv) has all the format fields with different samples in separate rows     
 
         CHROM	POS	ID	REF	ALT	Indiv	GT	GQ	DP	DPR	RO	QR	AO	QA
         1	931393	.	G	T	normal	0/0/0	132.995	2063	2063,0	2063	82063	0	0
