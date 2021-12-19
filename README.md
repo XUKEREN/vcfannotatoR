@@ -1,4 +1,4 @@
-# vcfannotatoR <!-- omit in toc -->
+# :dna: vcfannotatoR :dna: <!-- omit in toc -->
 A variant annotation tool that parses vcf files and fetches variant information from the Ensembl Variant Effect Predictor (VEP) REST API.  
 
 - [Introduction](#introduction)
@@ -11,6 +11,7 @@ A variant annotation tool that parses vcf files and fetches variant information 
     - [Command line examples](#command-line-examples)
     - [Example inputs](#example-inputs)
     - [Example outputs](#example-outputs)
+- [Contact](#contact)
 ## Introduction   
 
 vcfannotatoR parses vcf files and annotate each variant in the vcf with the following information:
@@ -134,3 +135,8 @@ A typical vcf file is provided under `./data` [Challenge_data.vcf](data/Challeng
         1	931393	.	G	T	normal	0/0/0	132.995	2063	2063,0	2063	82063	0	0
         1	931393	.	G	T	vaf5	0/0/0	132.995	2061	2061,95	1966	78221	95	3774
         1	935222	.	C	A	normal	0/1/1	160.002	567	567,326	240	9611	326	12246
+
+## Contact
+Keren Xu (kerenxu@usc.edu)
+
+https://xukeren.rbind.io/ 
