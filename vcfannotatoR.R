@@ -19,7 +19,7 @@
 #   4. Number of reads supporting the alternative allele.
 #   5. Percentage of reads supporting the alternative allele versus those supporting the reference allele.
 #   6. Allele frequency of variant (1000 genomes project) from Ensembl Variant Effect Predictor (VEP) REST API (API documentation is available here: http://grch37.rest.ensembl.org/documentation/info/vep_hgvs_post).
-#   7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, sift_prediction
+#   7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar_significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, sift_prediction
 #   Command line use example: Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf
 #   Command line use example that returns all the output files: Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE
 #   
@@ -253,7 +253,7 @@ df_anno <- df_anno %>%
     REF == minor_allele ~ 1 - minor_allele_freq))
 
 # clean the final ouput
-df_anno <- df_anno %>% select(c("#CHROM", "POS", "REF", "ALT", "DP", "TYPE", "RO", "AO", "AD_alt_vs_ref", "most_severe_consequence", "variant_allele_freq.1kg", "id", "minor_allele_freq", "minor_allele", "clin_sig", "pubmed","transcript_id", "gene_id", "impact", "gene_symbol", "biotype", "polyphen_prediction", "sift_prediction")) %>% rename("CHR" = "#CHROM", "total read depth" = "DP", "ref read depth" = "RO", "alt read depth" = "AO", "rsid" = "id", "clinvar significance" = "clin_sig")
+df_anno <- df_anno %>% select(c("#CHROM", "POS", "REF", "ALT", "DP", "TYPE", "RO", "AO", "AD_alt_vs_ref", "most_severe_consequence", "variant_allele_freq.1kg", "id", "minor_allele_freq", "minor_allele", "clin_sig", "pubmed","transcript_id", "gene_id", "impact", "gene_symbol", "biotype", "polyphen_prediction", "sift_prediction")) %>% rename("CHR" = "#CHROM", "total_read_depth" = "DP", "ref_read_depth" = "RO", "alt_read_depth" = "AO", "rsid" = "id", "clinvar_significance" = "clin_sig")
 # write out the annotated tsv file 
 df_anno %>% fwrite(output_tsv, sep = "\t")
 message(paste0("\n", output_tsv," generated\n"))

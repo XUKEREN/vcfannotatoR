@@ -5,7 +5,10 @@ A variant annotation tool parses vcf files and fetches variant information from 
   - [Introduction](#introduction)
   - [Installation](#installation)
     - [Dependencies](#dependencies)
-- [CHR	POS	REF	ALT	total read depth	TYPE	ref read depth	alt read depth	AD_alt_vs_ref	most_severe_consequence	variant_allele_freq.1kg	rsid	minor_allele_freq	minor_allele	clinvar significance	pubmed	transcript_id	gene_id	impact	gene_symbol	biotype	polyphen_prediction	sift_prediction](#chrposrefalttotal-read-depthtyperef-read-depthalt-read-depthad_alt_vs_refmost_severe_consequencevariant_allele_freq1kgrsidminor_allele_freqminor_alleleclinvar-significancepubmedtranscript_idgene_idimpactgene_symbolbiotypepolyphen_predictionsift_prediction)
+    - [Install vcfannotatoR from source](#install-vcfannotator-from-source)
+  - [How to use vcfannotatoR](#how-to-use-vcfannotator)
+    - [Arguments](#arguments)
+    - [Examples](#examples)
 ## Introduction   
 
 vcfannotatoR parses vcf files and annotate each variant in the vcf with the following information:
@@ -15,7 +18,7 @@ vcfannotatoR parses vcf files and annotate each variant in the vcf with the foll
 4. Number of reads supporting the alternative allele.
 5. Percentage of reads supporting the alternative allele versus those supporting the reference allele.
 6. Allele frequency of variant (1000 genomes project) from Ensembl Variant Effect Predictor (VEP) REST API (API documentation is available here: http://grch37.rest.ensembl.org/documentation/info/vep_hgvs_post).
-7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, and sift_prediction
+7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar_significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, and sift_prediction
 
 ## Installation
 
@@ -84,15 +87,18 @@ You can type the following in the command line, which will return a complete set
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
 ````
 Example outputs: 
-- [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv) has annotations for each variant 
+- [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv) has annotations for each variant     
+
+        ```
+        #  CHR	POS	REF	ALT	total_read_depth	TYPE	ref_read_depth	alt_read_depth	AD_alt_vs_ref	most_severe_consequence	variant_allele_freq.1kg	rsid	minor_allele_freq	minor_allele	clinvar_significance	pubmed	transcript_id	gene_id	impact	gene_symbol	biotype	polyphen_prediction	sift_prediction
+        #> 1	931393	G	T	4124	snp	4029	95	0.0235790518739141											#> 1	935222	C	A	1134	snp	480	652	1.35833333333333	missense_variant	0.4938	rs2298214	0.4938	A	NA	32203549	ENST00000428771	ENSG00000188290	MODERATE	HES4	protein_coding	benign	tolerated_low_confidence
+        #> 1	1277533	T	C	786	snp	0	786	Inf	synonymous_variant	0.998	rs307362	0.002	T	NA	NA	ENST00000378888,ENST00000378891	ENSG00000107404,ENSG00000107404	LOW,LOW	DVL1,DVL1	protein_coding,protein_coding	NA,NA	NA,NA
+        #> 1	1284490	G	A	228	snp	0	228	Inf	5_prime_UTR_variant	0.763	rs150789461	0.237	G	NA	NA	ENST00000378888,ENST00000378891	ENSG00000107404,ENSG00000107404	MODIFIER,MODIFIER	DVL1,DVL1	protein_coding,protein_coding	NA,NA	NA,NA
+        #> 1	1571850	G	A	4055	snp	3961	94	0.0237313809644029											#> 1	1572579	A	G	3456	snp	3430	26	0.0075801749271137	splice_polypyrimidine_tract_variant	0.0042	rs201485525	0.0042	G	NA	NA	ENST00000317673,ENST00000340677,ENST00000341832,ENST00000407249,ENST00000513088	ENSG00000248333,ENSG00000248333,ENSG00000248333,ENSG00000248333,ENSG00000248333	LOW,LOW,LOW,LOW,LOW	CDK11B,CDK11B,CDK11B,CDK11B,CDK11B	protein_coding,protein_coding,protein_coding,protein_coding,protein_coding	NA,NA,NA,NA,NA	NA,NA,NA,NA,NA
+        ```
 - [Challenge_data.info_meta.tsv](/data/Challenge_data.info_meta.tsv) has meta data for the info fields  
 - [Challenge_data.format_meta.tsv](/data/Challenge_data.format_meta.tsv) has meta data for the format fields  
 - [Challenge_data.info.tsv](/data/Challenge_data.info.tsv) has all the info fields  
 - [Challenge_data.format.tsv](/data/Challenge_data.format.tsv) has all the format fields   
 
-```
-#  CHR	POS	REF	ALT	total read depth	TYPE	ref read depth	alt read depth	AD_alt_vs_ref	most_severe_consequence	variant_allele_freq.1kg	rsid	minor_allele_freq	minor_allele	clinvar significance	pubmed	transcript_id	gene_id	impact	gene_symbol	biotype	polyphen_prediction	sift_prediction
-#> 1	931393	G	T	4124	snp	4029	95	0.0235790518739141														
-#> 1	935222	C	A	1134	snp	480	652	1.35833333333333	missense_variant	0.4938	rs2298214	0.4938	A	NA	32203549	ENST00000428771	ENSG00000188290	MODERATE	HES4	protein_coding	benign	tolerated_low_confidence
-#> 1	1277533	T	C	786	snp	0	786	Inf	synonymous_variant	0.998	rs307362	0.002	T	NA	NA	ENST00000378888,ENST00000378891	ENSG00000107404,ENSG00000107404	LOW,LOW	DVL1,DVL1	protein_coding,protein_coding	NA,NA	NA,NA
-```
+
