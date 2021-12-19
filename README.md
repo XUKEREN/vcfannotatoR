@@ -1,14 +1,14 @@
-# vcfannotatoR
+# vcfannotatoR <!-- omit in toc -->
 A variant annotation tool that parses vcf files and fetches variant information from the Ensembl Variant Effect Predictor (VEP) REST API.  
 
-- [vcfannotatoR](#vcfannotator)
-  - [Introduction](#introduction)
-  - [Installation](#installation)
-    - [Dependencies](#dependencies)
-    - [Install vcfannotatoR from source](#install-vcfannotator-from-source)
-  - [How to use vcfannotatoR](#how-to-use-vcfannotator)
-    - [Arguments](#arguments)
-    - [Examples](#examples)
+- [Introduction](#introduction)
+- [Installation](#installation)
+  - [Dependencies](#dependencies)
+  - [Install vcfannotatoR from source](#install-vcfannotator-from-source)
+- [How to use vcfannotatoR](#how-to-use-vcfannotator)
+  - [Arguments](#arguments)
+  - [Examples](#examples)
+    - [Example outputs:](#example-outputs)
 ## Introduction   
 
 vcfannotatoR parses vcf files and annotate each variant in the vcf with the following information:
@@ -86,7 +86,7 @@ You can type the following in the command line, which will return a complete set
 ```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
 ````
-Example outputs: 
+#### Example outputs: 
 - [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv) has annotations for each variant     
 
         CHR	POS	REF	ALT	total_read_depth	TYPE	ref_read_depth	alt_read_depth	AD_alt_vs_ref	most_severe_consequence	variant_allele_freq.1kg	rsid	minor_allele_freq	minor_allele	clinvar_significance	pubmed	transcript_id	gene_id	impact	gene_symbol	biotype	polyphen_prediction	sift_prediction
