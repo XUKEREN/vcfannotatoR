@@ -1,0 +1,11 @@
+FORMAT	description
+GT	Genotype
+GQ	Genotype Quality, the Phred-scaled marginal (or unconditional) probability of the called genotype
+GL	Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy
+DP	Read Depth
+DPR	Number of observation for each allele
+RO	Reference allele observation count
+QR	Sum of quality of the reference observations
+AO	Alternate allele observation count
+QA	Sum of quality of the alternate observations
+MIN_DP	Minimum depth in gVCF output block.

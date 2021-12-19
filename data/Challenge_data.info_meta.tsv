@@ -1,0 +1,44 @@
+INFO	description
+NS	Number of samples with data
+DP	Total read depth at the locus
+DPB	Total read depth per bp at the locus; bases in reads overlapping / bases in haplotype
+AC	Total number of alternate alleles in called genotypes
+AN	Total number of alleles in called genotypes
+AF	Estimated allele frequency in the range (0,1]
+RO	Reference allele observation count, with partial observations recorded fractionally
+AO	Alternate allele observations, with partial observations recorded fractionally
+PRO	Reference allele observation count, with partial observations recorded fractionally
+PAO	Alternate allele observations, with partial observations recorded fractionally
+QR	Reference allele quality sum in phred
+QA	Alternate allele quality sum in phred
+PQR	Reference allele quality sum in phred for partial observations
+PQA	Alternate allele quality sum in phred for partial observations
+SRF	Number of reference observations on the forward strand
+SRR	Number of reference observations on the reverse strand
+SAF	Number of alternate observations on the forward strand
+SAR	Number of alternate observations on the reverse strand
+SRP	Strand balance probability for the reference allele: Phred-scaled upper-bounds estimate of the probability of observing the deviation between SRF and SRR given E(SRF/SRR) ~ 0.5, derived using Hoeffding's inequality
+SAP	Strand balance probability for the alternate allele: Phred-scaled upper-bounds estimate of the probability of observing the deviation between SAF and SAR given E(SAF/SAR) ~ 0.5, derived using Hoeffding's inequality
+AB	Allele balance at heterozygous sites: a number between 0 and 1 representing the ratio of reads showing the reference allele to all reads, considering only reads from individuals called as heterozygous
+ABP	Allele balance probability at heterozygous sites: Phred-scaled upper-bounds estimate of the probability of observing the deviation between ABR and ABA given E(ABR/ABA) ~ 0.5, derived using Hoeffding's inequality
+RUN	Run length: the number of consecutive repeats of the alternate allele in the reference genome
+RPP	Read Placement Probability: Phred-scaled upper-bounds estimate of the probability of observing the deviation between RPL and RPR given E(RPL/RPR) ~ 0.5, derived using Hoeffding's inequality
+RPPR	Read Placement Probability for reference observations: Phred-scaled upper-bounds estimate of the probability of observing the deviation between RPL and RPR given E(RPL/RPR) ~ 0.5, derived using Hoeffding's inequality
+RPL	Reads Placed Left: number of reads supporting the alternate balanced to the left (5') of the alternate allele
+RPR	Reads Placed Right: number of reads supporting the alternate balanced to the right (3') of the alternate allele
+EPP	End Placement Probability: Phred-scaled upper-bounds estimate of the probability of observing the deviation between EL and ER given E(EL/ER) ~ 0.5, derived using Hoeffding's inequality
+EPPR	End Placement Probability for reference observations: Phred-scaled upper-bounds estimate of the probability of observing the deviation between EL and ER given E(EL/ER) ~ 0.5, derived using Hoeffding's inequality
+DPRA	Alternate allele depth ratio.  Ratio between depth in samples with each called alternate allele and those without.
+ODDS	The log odds ratio of the best genotype combination to the second-best.
+GTI	Number of genotyping iterations required to reach convergence or bailout.
+TYPE	The type of allele, either snp, mnp, ins, del, or complex.
+CIGAR	The extended CIGAR representation of each alternate allele, with the exception that '=' is replaced by 'M' to ease VCF parsing.  Note that INDEL alleles do not have the first matched base (which is provided by default, per the spec) referred to by the CIGAR.
+NUMALT	Number of unique non-reference alleles in called genotypes at this position.
+MEANALT	Mean number of unique non-reference allele observations per sample with the corresponding alternate alleles.
+LEN	allele length
+MQM	Mean mapping quality of observed alternate alleles
+MQMR	Mean mapping quality of observed reference alleles
+PAIRED	Proportion of observed alternate alleles which are supported by properly paired read fragments
+PAIREDR	Proportion of observed reference alleles which are supported by properly paired read fragments
+MIN_DP	Minimum depth in gVCF output block.
+END	Last position (inclusive) in gVCF output record.
