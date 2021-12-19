@@ -5,11 +5,7 @@ A variant annotation tool parses vcf files and fetches variant information from 
   - [Introduction](#introduction)
   - [Installation](#installation)
     - [Dependencies](#dependencies)
-- [check dependencies and install packages if they are not already installed](#check-dependencies-and-install-packages-if-they-are-not-already-installed)
-    - [Install vcfannotatoR from source](#install-vcfannotator-from-source)
-  - [How to use vcfannotatoR](#how-to-use-vcfannotator)
-    - [Arguments](#arguments)
-    - [Examples](#examples)
+- [CHR	POS	REF	ALT	total read depth	TYPE	ref read depth	alt read depth	AD_alt_vs_ref	most_severe_consequence	variant_allele_freq.1kg	rsid	minor_allele_freq	minor_allele	clinvar significance	pubmed	transcript_id	gene_id	impact	gene_symbol	biotype	polyphen_prediction	sift_prediction](#chrposrefalttotal-read-depthtyperef-read-depthalt-read-depthad_alt_vs_refmost_severe_consequencevariant_allele_freq1kgrsidminor_allele_freqminor_alleleclinvar-significancepubmedtranscript_idgene_idimpactgene_symbolbiotypepolyphen_predictionsift_prediction)
 ## Introduction   
 
 vcfannotatoR parses vcf files and annotate each variant in the vcf with the following information:
@@ -47,7 +43,7 @@ check_package <- function(package) {
   }
 }
 
-# check dependencies and install packages if they are not already installed  
+# check dependencies and install packages if they are not already installed <!-- omit in toc -->
 packages <- c("optparse", "data.table", "tidyverse", "httr", "jsonlite", "xml2", "foreach", "doParallel")
 load_packages <- lapply(packages, check_package)
 ````
@@ -81,7 +77,7 @@ You can type the following in the command line, which will return a tsv file `Ch
 ```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf
 ````
-An example output can be found here: [Challenge_data.annotated.tsv]()   
+An example output can be found here: [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv)   
 
 You can type the following in the command line, which will return a complete set of output files in the input directory:     
 ```bash
@@ -93,3 +89,10 @@ Example outputs:
 - [Challenge_data.format_meta.tsv](/data/Challenge_data.format_meta.tsv) has meta data for the format fields  
 - [Challenge_data.info.tsv](/data/Challenge_data.info.tsv) has all the info fields  
 - [Challenge_data.format.tsv](/data/Challenge_data.format.tsv) has all the format fields   
+
+```
+#  CHR	POS	REF	ALT	total read depth	TYPE	ref read depth	alt read depth	AD_alt_vs_ref	most_severe_consequence	variant_allele_freq.1kg	rsid	minor_allele_freq	minor_allele	clinvar significance	pubmed	transcript_id	gene_id	impact	gene_symbol	biotype	polyphen_prediction	sift_prediction
+#> 1	931393	G	T	4124	snp	4029	95	0.0235790518739141														
+#> 1	935222	C	A	1134	snp	480	652	1.35833333333333	missense_variant	0.4938	rs2298214	0.4938	A	NA	32203549	ENST00000428771	ENSG00000188290	MODERATE	HES4	protein_coding	benign	tolerated_low_confidence
+#> 1	1277533	T	C	786	snp	0	786	Inf	synonymous_variant	0.998	rs307362	0.002	T	NA	NA	ENST00000378888,ENST00000378891	ENSG00000107404,ENSG00000107404	LOW,LOW	DVL1,DVL1	protein_coding,protein_coding	NA,NA	NA,NA
+```
