@@ -1,4 +1,4 @@
-# :dna: vcfannotatoR :dna: <!-- omit in toc -->
+# vcfannotatoR :dna: <!-- omit in toc -->
 A variant annotation tool that parses vcf files and fetches variant information from the Ensembl Variant Effect Predictor (VEP) REST API.  
 
 - [Introduction](#introduction)
@@ -99,14 +99,6 @@ A typical vcf file is provided under `./data` [Challenge_data.vcf](data/Challeng
         1	931393	G	T	4124	snp	4029	95	0.0235790518739141														
         1	935222	C	A	1134	snp	480	652	1.35833333333333	missense_variant	0.4938	rs2298214	0.4938	A	NA	32203549	ENST00000428771	ENSG00000188290	MODERATE	HES4	protein_coding	benign	tolerated_low_confidence
         1	1277533	T	C	786	snp	0	786	Inf	synonymous_variant	0.998	rs307362	0.002	T	NA	NA	ENST00000378888,ENST00000378891	ENSG00000107404,ENSG00000107404	LOW,LOW	DVL1,DVL1	protein_coding,protein_coding	NA,NA	NA,NA
-
-1. Type of variation (substitution, insertion, CNV, etc.).
-2. Functional consequence (missense, silent, intergenic, etc.). If there are multiple effects, the variant will be annotated with the most deleterious consequence.
-3. Sequence reading depth at each variant site.
-4. Number of reads supporting the alternative allele.
-5. Percentage of reads supporting the alternative allele versus those supporting the reference allele.
-6. Allele frequency of variant (1000 genomes project) from Ensembl Variant Effect Predictor (VEP) REST API (API documentation is available here: http://grch37.rest.ensembl.org/documentation/info/vep_hgvs_post).
-7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar_significance, pubmed, transcript_id, gene_id, impact, gene_symbol, biotype, polyphen_prediction, and sift_prediction
 
 - [Challenge_data.info_meta.tsv](/data/Challenge_data.info_meta.tsv) has meta data for the info fields  
 
