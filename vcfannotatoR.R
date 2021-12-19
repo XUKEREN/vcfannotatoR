@@ -12,7 +12,7 @@
 
 ################################################################################
 #
-#   Description: A variant annotation tool. This script parses vcf files and annotate each variant in the vcf with the following information:
+#   Description: A variant annotation tool. This script parses vcf files and annotates each variant in the vcf with the following information:
 #   1. Type of variation (substitution, insertion, CNV, etc.).
 #   2. Functional consequence (missense, silent, intergenic, etc.). If there are multiple effects, the variant will be annotated with the most deleterious consequence.
 #   3. Sequence reading depth at each variant site.
@@ -64,8 +64,7 @@ option_list <- list(
 
 # parses command line options 
 opt <- parse_args(OptionParser(option_list = option_list))
-opt$input_dir="/Users/kerenxu/Downloads/tempus.scripts/data"
-opt$input="Challenge_data.vcf"
+
 # ===============================================================================
 #    Read input vcf
 # ===============================================================================
