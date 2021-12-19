@@ -70,7 +70,7 @@ Rscript vcfannotatoR.R -h
 
 Argument | Description | Required
 ------------ | ------------ | ------------
---input_dir | directory with the input *vcf* file | **Yes**
+--input_dir | directory with the input vcf file | **Yes**
 -I, --input | vcf file to be processed | **Yes**
 -M, --getmeta | TRUE or FALSE, indicates whether to generate meta data tsv | No (default = FALSE)
 -F, --getinfo | TRUE or FALSE, indicates whether to generate info fields tsv | No (default = FALSE)
@@ -98,8 +98,39 @@ Example outputs:
         #>  1	1572579	A	G	3456	snp	3430	26	0.0075801749271137	splice_polypyrimidine_tract_variant	0.0042	rs201485525	0.0042	G	NA	NA	ENST00000317673,ENST00000340677,ENST00000341832,ENST00000407249,ENST00000513088	ENSG00000248333,ENSG00000248333,ENSG00000248333,ENSG00000248333,ENSG00000248333	LOW,LOW,LOW,LOW,LOW	CDK11B,CDK11B,CDK11B,CDK11B,CDK11B	protein_coding,protein_coding,protein_coding,protein_coding,protein_coding	NA,NA,NA,NA,NA	NA,NA,NA,NA,NA
 
 - [Challenge_data.info_meta.tsv](/data/Challenge_data.info_meta.tsv) has meta data for the info fields  
+
+        #  INFO	description
+        #>  NS	Number of samples with data
+        #>  DP	Total read depth at the locus
+        #>  DPB	Total read depth per bp at the locus; bases in reads overlapping / bases in haplotype
+        #>  AC	Total number of alternate alleles in called genotypes
+        #>  AN	Total number of alleles in called genotypes
+        #>  AF	Estimated allele frequency in the range (0,1]   
+
 - [Challenge_data.format_meta.tsv](/data/Challenge_data.format_meta.tsv) has meta data for the format fields  
+
+        #  FORMAT	description
+        #>  GT	Genotype
+        #>  GQ	Genotype Quality, the Phred-scaled marginal (or unconditional) probability of the called genotype
+        #>  GL	Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy
+        #>  DP	Read Depth
+        #>  DPR	Number of observation for each allele
+        #>  RO	Reference allele observation count
+
 - [Challenge_data.info.tsv](/data/Challenge_data.info.tsv) has all the info fields  
+
+        #  #CHROM	POS	ID	REF	ALT	QUAL	FILTER	AB	ABP	AC	AF	AN	AO	CIGAR	DP	DPB	DPRA	EPP	EPPR	GTI	LEN	MEANALT	MQM	MQMR	NS	NUMALT	ODDS	PAIRED	PAIREDR	PAO	PQA	PQR	PRO	QA	QR	RO	RPL	RPP	RPPR	RPR	RUN	SAF	SAP	SAR	SRF	SRP	SRR	TYPE
+        #>  1	931393	.	G	T	2.17938e-13	.	0	0	0	0	6	95	1X	4124	4124	0.999031	9.61615	316.776	0	1	1	59.7579	65.2274	2	1	591.29	0.989474	0.966741	0	0	0	0	3774	160284	4029	51	4.13032	101.278	44	1	40	8.15326	55	1663	269.369	2366	snp
+        #>  1	935222	.	C	A	16866.7	.	0.574956	58.3503	4	0.666667	6	652	1X	1134	1134	0	44.7878	169.779	0	1	2	70	70	2	1	53.367	0.990798	0.975	0	0	0	0	24492	19222	480	398	72.0711	214.077	254	1	28	1186.05	624	16	910.975	464	snp
+        #>  1	1277533	.	T	C	28168.6	.	0	0	6	1	6	786	1X	786	786	0	94.5216	0	0	1	1	70	0	2	1	307.075	0.977099	0	0	0	0	0	31532	0	0	474	75.5143	0	312	1	376	6.20397	410	0	0	0	snp
+
 - [Challenge_data.format.tsv](/data/Challenge_data.format.tsv) has all the format fields   
 
+        #  #CHROM	POS	ID	REF	ALT	Indiv	GT	GQ	DP	DPR	RO	QR	AO	QA
+        #>  1	931393	.	G	T	normal	0/0/0	132.995	2063	2063,0	2063	82063	0	0
+        #>  1	931393	.	G	T	vaf5	0/0/0	132.995	2061	2061,95	1966	78221	95	3774
+        #>  1	935222	.	C	A	normal	0/1/1	160.002	567	567,326	240	9611	326	12246
+        #>  1	935222	.	C	A	vaf5	0/1/1	160.002	567	567,326	240	9611	326	12246
+        #>  1	1277533	.	T	C	normal	1/1/1	160.002	393	393,393	0	0	393	15766
+        #>  1	1277533	.	T	C	vaf5	1/1/1	160.002	393	393,393	0	0	393	15766
 
