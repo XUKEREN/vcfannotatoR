@@ -78,6 +78,11 @@ Argument | Description | Required
 -M, --getmeta | TRUE or FALSE, indicates whether to generate meta data tsv | No (default = FALSE)
 -F, --getinfo | TRUE or FALSE, indicates whether to generate info fields tsv | No (default = FALSE)
 -M, --getformat | TRUE or FALSE, indicates whether to generate format fields tsv | No (default = FALSE)
+--totalread | format field total read depth | No (default = DP)
+--refread | format field reference allele read depth | No (default = RO)
+--altread | format field alternative allele read depth | No (default = AO)
+--varianttype | format field variant type | No (default = TYPE)
+
 ### Examples   
 #### Command line examples    
 You can type the following in the command line, which will return a tsv file `Challenge_data.annotated.tsv` in the input directory:  
@@ -90,6 +95,8 @@ You can type the following in the command line, which will return a complete set
 ```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
 ````
+**note:** User can also define the format fields for total read depth, ref allele read depth, alt allele read depth, and variant type.  The default fields are DP, RO, AO, and TYPE. For VCF that does not have a variant type field, user can assign any available field name to --varianttype. 
+
 #### Example inputs   
 A typical vcf file is provided under `./data` [Challenge_data.vcf](data/Challenge_data.vcf)  
 #### Example outputs  

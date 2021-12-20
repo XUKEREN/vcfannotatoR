@@ -59,7 +59,15 @@ option_list <- list(
   make_option(c("-F", "--getinfo"), type = "logical", default = FALSE, 
               help = "output info fields", metavar = "logical"),
   make_option(c("-G", "--getformat"), type = "logical", default = FALSE, 
-              help = "output format fields", metavar = "logical")
+              help = "output format fields", metavar = "logical"),
+  make_option("--totalread", type = "character", default = "DP", 
+              help = "format field total read depth", metavar = "character"),
+  make_option("--refread", type = "character", default = "RO", 
+              help = "format field reference allele read depth", metavar = "character"),
+  make_option("--altread", type = "character", default = "AO", 
+              help = "format field alternative allele read depth", metavar = "character"),
+  make_option("--varianttype", type = "character", default = "TYPE", 
+              help = "format field variant type", metavar = "character")
 )
 
 # parses command line options 
@@ -167,7 +175,7 @@ get_format <- function(vcf) {
 colnames(my_vcf) <- get_header(strings)
 
 # use function get_single_info to extract four columns: reading depth, type of the variants, reference allele observation count and alternate allele observation count  
-df_anno <- c("DP", "TYPE", "RO", "AO") %>%
+df_anno <- c(opt$totalread, opt$varianttype, opt$refread, opt$altread) %>%
   map(get_single_info, string = my_vcf$INFO %>% str_split(., ";") %>% unlist()) %>%
   do.call(cbind, .) %>%
   as_tibble(.name_repair = "minimal")
