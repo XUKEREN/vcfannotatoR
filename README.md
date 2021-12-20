@@ -101,6 +101,7 @@ Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE -
 #### Example inputs   
 A typical input vcf file is provided under `./data` [Challenge_data.vcf](data/Challenge_data.vcf)  
 #### Example outputs  
+A complete set of output files are provided under `./data`  
 - [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv) has annotations for each variant     
 
         CHR	POS	REF	ALT	total_read_depth	TYPE	ref_read_depth	alt_read_depth	AD_alt_vs_ref	most_severe_consequence	variant_allele_freq.1kg	rsid	minor_allele_freq	minor_allele	clinvar_significance	pubmed	transcript_id	gene_id	impact	gene_symbol	biotype	polyphen_prediction	sift_prediction
