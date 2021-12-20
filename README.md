@@ -1,4 +1,5 @@
 # :dna: vcfannotatoR :dna: <!-- omit in toc -->
+  [![HitCount](http://hits.dwyl.com/XUKEREN/vcfannotatoR.svg?style=flat-square)](http://hits.dwyl.com/XUKEREN/vcfannotatoR)
 A variant annotation tool that parses vcf files and fetches variant information from the Ensembl Variant Effect Predictor (VEP) REST API.  
 
 - [Introduction](#introduction)
