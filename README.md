@@ -86,13 +86,13 @@ Argument | Description | Required
 
 ### Examples   
 #### Command line examples    
-You can type the following in the command line, which will return a tsv file `Challenge_data.annotated.tsv` in the input directory:  
+**Use case 1:** You can type the following in the command line, which will return a tsv file `Challenge_data.annotated.tsv` in the input directory:  
 ```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf
 ````
 An example output can be found here: [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv)   
 
-You can type the following in the command line, which will return a complete set of output files in the input directory:     
+**Use case 2:** You can type the following in the command line, which will return a complete set of output files in the input directory:     
 ```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
 ````
