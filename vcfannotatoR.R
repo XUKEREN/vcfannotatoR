@@ -261,7 +261,10 @@ df_anno <- df_anno %>%
     REF == minor_allele ~ 1 - minor_allele_freq))
 
 # clean the final ouput
-df_anno <- df_anno %>% select(c("#CHROM", "POS", "REF", "ALT", "DP", "TYPE", "RO", "AO", "AD_alt_vs_ref", "most_severe_consequence", "variant_allele_freq.1kg", "id", "minor_allele_freq", "minor_allele", "clin_sig", "pubmed","transcript_id", "gene_id", "impact", "gene_symbol", "biotype", "polyphen_prediction", "sift_prediction")) %>% rename("CHR" = "#CHROM", "total_read_depth" = "DP", "ref_read_depth" = "RO", "alt_read_depth" = "AO", "rsid" = "id", "clinvar_significance" = "clin_sig")
+df_anno <- df_anno %>% 
+  select(c("#CHROM", "POS", "REF", "ALT", "DP", "TYPE", "RO", "AO", "AD_alt_vs_ref", "most_severe_consequence", "variant_allele_freq.1kg", "id", "minor_allele_freq", "minor_allele", "clin_sig", "pubmed","transcript_id", "gene_id", "impact", "gene_symbol", "biotype", "polyphen_prediction", "sift_prediction")) %>% 
+  rename("CHR" = "#CHROM", "total_read_depth" = "DP", "ref_read_depth" = "RO", "alt_read_depth" = "AO", "rsid" = "id", "clinvar_significance" = "clin_sig")
+
 # write out the annotated tsv file 
 df_anno %>% fwrite(output_tsv, sep = "\t")
 message(paste0("\n", output_tsv," generated\n"))
@@ -309,4 +312,5 @@ if (opt$getformat == TRUE) {
 }
 
 # print version information about R, the OS and attached or loaded packages for reproducibility
+message(paste0("\nprint out session Info\n"))
 sessionInfo()

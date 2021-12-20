@@ -37,7 +37,7 @@ vcfannotatoR needs the following:
     data.table (1.14.2)     tidyverse (1.3.1)       optparse (1.7.1)         
     foreach (1.5.1)         doParallel (1.0.16)     jsonlite (1.7.2)
     httr (1.4.2)            xml2 (1.3.3)            
-````
+```
 
 vcfannotatoR will check if the required R libraries are installed and automatically installs those not found. You can also use the following command in R to download the libraries before running vcfannotatoR:  
 
@@ -54,7 +54,7 @@ check_package <- function(package) {
 # check dependencies and install packages if they are not already installed <!-- omit in toc -->
 packages <- c("optparse", "data.table", "tidyverse", "httr", "jsonlite", "xml2", "foreach", "doParallel")
 load_packages <- lapply(packages, check_package)
-````
+```
 **note:** "data.table" and "tidyverse" are used for data manipulation, "optparse" is used to catch the arguments from the command line, "foreach" and "doParallel" are used to perform for loops in parallel, and "jsonlite", "httr", and "xml2" are used to fetch variant consequences from the Ensembl VEP REST API.  
 
 ### Install vcfannotatoR from source
@@ -63,7 +63,7 @@ You can clone the GitHub repository:
 ```bash
 git clone https://github.com/XUKEREN/vcfannotatoR.git
 cd vcfannotatoR
-````
+```
 **vcfannotatoR.R** is ready for use in your command line.   
 ## How to use vcfannotatoR     
 To run vcfannotatoR execute the vcfannotatoR.R script. This script catches the arguments from the command line and produces a tsv with variant annotations.   
@@ -72,7 +72,7 @@ To run vcfannotatoR execute the vcfannotatoR.R script. This script catches the a
 You can type the following in the command line to check available options:  
 ```bash
 Rscript vcfannotatoR.R -h  
-````  
+```  
 
 Argument | Description | Required
 ------------ | ------------ | ------------
@@ -91,14 +91,14 @@ Argument | Description | Required
 **Use case 1:** You can type the following in the command line, which will return a tsv file `Challenge_data.annotated.tsv` in the input directory:  
 ```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf
-````
+```
 An example output can be found here: [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv)   
 
 **Use case 2:** You can type the following in the command line, which will return a complete set of output files in the input directory:     
 ```bash
 Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE --getinfo TRUE --getformat TRUE 
-````
-**note:** User can also define the format fields for total read depth, ref allele read depth, alt allele read depth, and variant type.  The default fields are DP, RO, AO, and TYPE. For VCF that does not have a variant type field, user can assign any available field name to --varianttype. 
+```
+**note:** User can define the format fields for total read depth, ref allele read depth, alt allele read depth, and variant type.  The default fields are DP, RO, AO, and TYPE. For VCF that does not have a variant type field, user should assign any available field to --varianttype. 
 
 #### Example inputs   
 A typical input vcf file is provided under `./data` [Challenge_data.vcf](data/Challenge_data.vcf)  
