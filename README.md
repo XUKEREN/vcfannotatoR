@@ -23,6 +23,8 @@ vcfannotatoR parses vcf files and annotates each variant in the vcf with the fol
 6. Allele frequency of variant (1000 genomes project) from Ensembl Variant Effect Predictor (VEP) REST API (API documentation is available here: http://grch37.rest.ensembl.org/documentation/info/vep_hgvs_post).
 7. Additional annotations: rsid, minor_allele_freq, minor_allele, clinvar_significance, pubmed, transcript_id, gene_id, impact (a subjective classification of the severity of the variant consequence, based on agreement with SNPEff), gene_symbol (for each transcript), biotype, polyphen_prediction, and sift_prediction  
 
+vcfannotatoR is open-source and available on [GitHub](https://github.com/XUKEREN/vcfannotatoR "GitHub vcfannotatoR page")
+
 ## Installation
 
 ### Dependencies  
