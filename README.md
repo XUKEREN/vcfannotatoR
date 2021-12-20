@@ -14,7 +14,7 @@ A variant annotation tool that parses vcf files and fetches variant information 
 - [Contact](#contact)
 ## Introduction   
 
-vcfannotatoR parses vcf files and annotate each variant in the vcf with the following information:
+vcfannotatoR parses vcf files and annotates each variant in the vcf with the following information:
 1. Type of variation (substitution, insertion, CNV, etc.).
 2. Functional consequence (missense, silent, intergenic, etc.). If there are multiple effects, the variant will be annotated with the most deleterious consequence.
 3. Sequence reading depth at each variant site.
@@ -60,6 +60,7 @@ load_packages <- lapply(packages, check_package)
 You can clone the GitHub repository:  
 ```bash
 git clone https://github.com/XUKEREN/vcfannotatoR.git
+cd vcfannotatoR
 ````
 **vcfannotatoR.R** is ready for use in your command line.   
 ## How to use vcfannotatoR     
@@ -98,7 +99,7 @@ Rscript vcfannotatoR.R --input_dir ./data -I Challenge_data.vcf --getmeta TRUE -
 **note:** User can also define the format fields for total read depth, ref allele read depth, alt allele read depth, and variant type.  The default fields are DP, RO, AO, and TYPE. For VCF that does not have a variant type field, user can assign any available field name to --varianttype. 
 
 #### Example inputs   
-A typical vcf file is provided under `./data` [Challenge_data.vcf](data/Challenge_data.vcf)  
+A typical input vcf file is provided under `./data` [Challenge_data.vcf](data/Challenge_data.vcf)  
 #### Example outputs  
 - [Challenge_data.annotated.tsv](/data/Challenge_data.annotated.tsv) has annotations for each variant     
 
