@@ -41,7 +41,7 @@ vcfannotatoR needs the following:
     httr (1.4.2)            xml2 (1.3.3)            
 ```
 
-vcfannotatoR will check if the required R libraries are installed and automatically installs those not found. You can also use the following command in R to download the libraries before running vcfannotatoR:  
+vcfannotatoR will check if the required R libraries are installed and automatically install those not found. You can also use the following command in R to download the libraries before running vcfannotatoR:  
 
 
 ```r
