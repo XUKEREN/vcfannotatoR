@@ -1,5 +1,5 @@
 # :dna: vcfannotatoR :dna: <!-- omit in toc -->
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![HitCount](http://hits.dwyl.com/XUKEREN/vcfannotatoR.svg?style=flat-square)](http://hits.dwyl.com/XUKEREN/vcfannotatoR) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)   
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![HitCount](http://hits.dwyl.com/XUKEREN/vcfannotatoR.svg?style=flat-square)](http://hits.dwyl.com/XUKEREN/vcfannotatoR) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/XUKEREN/vcfannotatoR/issues)   
 
 A variant annotation tool that parses vcf files and fetches variant information from the Ensembl Variant Effect Predictor (VEP) REST API.  
 
