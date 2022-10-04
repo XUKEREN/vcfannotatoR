@@ -144,4 +144,4 @@ A complete set of output files are provided under `./data`
 ## Contact
 Keren Xu (kerenxu@usc.edu)
 
-https://xukeren.rbind.io/ 
+https://xukeren.github.io/ 
